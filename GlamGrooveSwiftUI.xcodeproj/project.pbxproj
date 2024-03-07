@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		90B66B872B99F2C80091CEBA /* GlamGrooveSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B66B862B99F2C80091CEBA /* GlamGrooveSwiftUIApp.swift */; };
-		90B66B892B99F2C80091CEBA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B66B882B99F2C80091CEBA /* ContentView.swift */; };
 		90B66B8B2B99F2C80091CEBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90B66B8A2B99F2C80091CEBA /* Assets.xcassets */; };
 		90B66B8E2B99F2C80091CEBA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90B66B8D2B99F2C80091CEBA /* Preview Assets.xcassets */; };
 		90B66B982B99F2C80091CEBA /* GlamGrooveSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B66B972B99F2C80091CEBA /* GlamGrooveSwiftUITests.swift */; };
 		90B66BA22B99F2C80091CEBA /* GlamGrooveSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B66BA12B99F2C80091CEBA /* GlamGrooveSwiftUIUITests.swift */; };
 		90B66BA42B99F2C90091CEBA /* GlamGrooveSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B66BA32B99F2C90091CEBA /* GlamGrooveSwiftUIUITestsLaunchTests.swift */; };
+		90B66BBE2B99F9C70091CEBA /* Coco-Gothic-Light-trial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90B66BB12B99F9C70091CEBA /* Coco-Gothic-Light-trial.ttf */; };
+		90B66BC42B99F9C70091CEBA /* Coco-Gothic-Regular-trial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90B66BB72B99F9C70091CEBA /* Coco-Gothic-Regular-trial.ttf */; };
+		90B66BC92B99F9C70091CEBA /* Coco-Gothic-Ultralight-trial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90B66BBC2B99F9C70091CEBA /* Coco-Gothic-Ultralight-trial.ttf */; };
+		90B66BCA2B99F9C70091CEBA /* Coco-Gothic-Bold-trial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90B66BBD2B99F9C70091CEBA /* Coco-Gothic-Bold-trial.ttf */; };
+		90B66BD22B99FF330091CEBA /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B66BD12B99FF330091CEBA /* SplashScreen.swift */; };
+		90B66BD42B9A060E0091CEBA /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B66BD32B9A060E0091CEBA /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +41,6 @@
 /* Begin PBXFileReference section */
 		90B66B832B99F2C80091CEBA /* GlamGrooveSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlamGrooveSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B66B862B99F2C80091CEBA /* GlamGrooveSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlamGrooveSwiftUIApp.swift; sourceTree = "<group>"; };
-		90B66B882B99F2C80091CEBA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		90B66B8A2B99F2C80091CEBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90B66B8D2B99F2C80091CEBA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		90B66B932B99F2C80091CEBA /* GlamGrooveSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlamGrooveSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +48,13 @@
 		90B66B9D2B99F2C80091CEBA /* GlamGrooveSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlamGrooveSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B66BA12B99F2C80091CEBA /* GlamGrooveSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlamGrooveSwiftUIUITests.swift; sourceTree = "<group>"; };
 		90B66BA32B99F2C90091CEBA /* GlamGrooveSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlamGrooveSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		90B66BB12B99F9C70091CEBA /* Coco-Gothic-Light-trial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Coco-Gothic-Light-trial.ttf"; sourceTree = "<group>"; };
+		90B66BB72B99F9C70091CEBA /* Coco-Gothic-Regular-trial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Coco-Gothic-Regular-trial.ttf"; sourceTree = "<group>"; };
+		90B66BBC2B99F9C70091CEBA /* Coco-Gothic-Ultralight-trial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Coco-Gothic-Ultralight-trial.ttf"; sourceTree = "<group>"; };
+		90B66BBD2B99F9C70091CEBA /* Coco-Gothic-Bold-trial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Coco-Gothic-Bold-trial.ttf"; sourceTree = "<group>"; };
+		90B66BCB2B99FC2F0091CEBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		90B66BD12B99FF330091CEBA /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		90B66BD32B9A060E0091CEBA /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +85,7 @@
 		90B66B7A2B99F2C80091CEBA = {
 			isa = PBXGroup;
 			children = (
+				90B66BD32B9A060E0091CEBA /* Launch Screen.storyboard */,
 				90B66B852B99F2C80091CEBA /* GlamGrooveSwiftUI */,
 				90B66B962B99F2C80091CEBA /* GlamGrooveSwiftUITests */,
 				90B66BA02B99F2C80091CEBA /* GlamGrooveSwiftUIUITests */,
@@ -94,8 +106,13 @@
 		90B66B852B99F2C80091CEBA /* GlamGrooveSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				90B66BCF2B99FE910091CEBA /* UICommon */,
+				90B66BCE2B99FE4A0091CEBA /* ViewModel */,
+				90B66BCD2B99FE3F0091CEBA /* Model */,
+				90B66BCC2B99FE000091CEBA /* View */,
+				90B66BCB2B99FC2F0091CEBA /* Info.plist */,
+				90B66BB02B99F8D90091CEBA /* Fonts */,
 				90B66B862B99F2C80091CEBA /* GlamGrooveSwiftUIApp.swift */,
-				90B66B882B99F2C80091CEBA /* ContentView.swift */,
 				90B66B8A2B99F2C80091CEBA /* Assets.xcassets */,
 				90B66B8C2B99F2C80091CEBA /* Preview Content */,
 			);
@@ -125,6 +142,54 @@
 				90B66BA32B99F2C90091CEBA /* GlamGrooveSwiftUIUITestsLaunchTests.swift */,
 			);
 			path = GlamGrooveSwiftUIUITests;
+			sourceTree = "<group>";
+		};
+		90B66BB02B99F8D90091CEBA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				90B66BBD2B99F9C70091CEBA /* Coco-Gothic-Bold-trial.ttf */,
+				90B66BB12B99F9C70091CEBA /* Coco-Gothic-Light-trial.ttf */,
+				90B66BB72B99F9C70091CEBA /* Coco-Gothic-Regular-trial.ttf */,
+				90B66BBC2B99F9C70091CEBA /* Coco-Gothic-Ultralight-trial.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		90B66BCC2B99FE000091CEBA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				90B66BD02B99FEF80091CEBA /* Login */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		90B66BCD2B99FE3F0091CEBA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		90B66BCE2B99FE4A0091CEBA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		90B66BCF2B99FE910091CEBA /* UICommon */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UICommon;
+			sourceTree = "<group>";
+		};
+		90B66BD02B99FEF80091CEBA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				90B66BD12B99FF330091CEBA /* SplashScreen.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,8 +296,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90B66BCA2B99F9C70091CEBA /* Coco-Gothic-Bold-trial.ttf in Resources */,
 				90B66B8E2B99F2C80091CEBA /* Preview Assets.xcassets in Resources */,
 				90B66B8B2B99F2C80091CEBA /* Assets.xcassets in Resources */,
+				90B66BC92B99F9C70091CEBA /* Coco-Gothic-Ultralight-trial.ttf in Resources */,
+				90B66BBE2B99F9C70091CEBA /* Coco-Gothic-Light-trial.ttf in Resources */,
+				90B66BC42B99F9C70091CEBA /* Coco-Gothic-Regular-trial.ttf in Resources */,
+				90B66BD42B9A060E0091CEBA /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90B66B892B99F2C80091CEBA /* ContentView.swift in Sources */,
+				90B66BD22B99FF330091CEBA /* SplashScreen.swift in Sources */,
 				90B66B872B99F2C80091CEBA /* GlamGrooveSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +494,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"GlamGrooveSwiftUI/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GlamGrooveSwiftUI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -452,6 +523,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"GlamGrooveSwiftUI/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GlamGrooveSwiftUI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
