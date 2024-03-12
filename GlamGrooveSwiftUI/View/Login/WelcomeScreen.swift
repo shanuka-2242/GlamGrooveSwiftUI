@@ -13,6 +13,7 @@ struct SplashScreen: View {
             Image("WelcomeScreenImage")
                 .resizable()
                 .scaledToFill()
+                .frame(width: .screenWidth, height: .screenHeight)
         }
         .ignoresSafeArea()
     }
