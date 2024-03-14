@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		907B6A7A2BA3305B0061091D /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 907B6A752BA3305B0061091D /* Poppins-Light.ttf */; };
+		907B6A7B2BA3305B0061091D /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 907B6A762BA3305B0061091D /* Poppins-Bold.ttf */; };
+		907B6A7C2BA3305B0061091D /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 907B6A772BA3305B0061091D /* Poppins-Regular.ttf */; };
+		907B6A7D2BA3305B0061091D /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 907B6A782BA3305B0061091D /* Poppins-SemiBold.ttf */; };
+		907B6A7E2BA3305B0061091D /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 907B6A792BA3305B0061091D /* Poppins-Medium.ttf */; };
+		907B6A802BA3391F0061091D /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907B6A7F2BA3391F0061091D /* RoundButton.swift */; };
 		90B66B872B99F2C80091CEBA /* GlamGrooveSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B66B862B99F2C80091CEBA /* GlamGrooveSwiftUIApp.swift */; };
 		90B66B8B2B99F2C80091CEBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90B66B8A2B99F2C80091CEBA /* Assets.xcassets */; };
 		90B66B8E2B99F2C80091CEBA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90B66B8D2B99F2C80091CEBA /* Preview Assets.xcassets */; };
 		90B66B982B99F2C80091CEBA /* GlamGrooveSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B66B972B99F2C80091CEBA /* GlamGrooveSwiftUITests.swift */; };
 		90B66BA22B99F2C80091CEBA /* GlamGrooveSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B66BA12B99F2C80091CEBA /* GlamGrooveSwiftUIUITests.swift */; };
 		90B66BA42B99F2C90091CEBA /* GlamGrooveSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B66BA32B99F2C90091CEBA /* GlamGrooveSwiftUIUITestsLaunchTests.swift */; };
-		90B66BBE2B99F9C70091CEBA /* Coco-Gothic-Light-trial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90B66BB12B99F9C70091CEBA /* Coco-Gothic-Light-trial.ttf */; };
-		90B66BC42B99F9C70091CEBA /* Coco-Gothic-Regular-trial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90B66BB72B99F9C70091CEBA /* Coco-Gothic-Regular-trial.ttf */; };
-		90B66BC92B99F9C70091CEBA /* Coco-Gothic-Ultralight-trial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90B66BBC2B99F9C70091CEBA /* Coco-Gothic-Ultralight-trial.ttf */; };
-		90B66BCA2B99F9C70091CEBA /* Coco-Gothic-Bold-trial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90B66BBD2B99F9C70091CEBA /* Coco-Gothic-Bold-trial.ttf */; };
 		90B66BD22B99FF330091CEBA /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B66BD12B99FF330091CEBA /* WelcomeScreen.swift */; };
 		90B66BD42B9A060E0091CEBA /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B66BD32B9A060E0091CEBA /* Launch Screen.storyboard */; };
 		90CD73142BA08B0D006F8A15 /* UIExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CD73132BA08B0D006F8A15 /* UIExtention.swift */; };
@@ -40,6 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		907B6A752BA3305B0061091D /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		907B6A762BA3305B0061091D /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		907B6A772BA3305B0061091D /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		907B6A782BA3305B0061091D /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		907B6A792BA3305B0061091D /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		907B6A7F2BA3391F0061091D /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		90B66B832B99F2C80091CEBA /* GlamGrooveSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlamGrooveSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B66B862B99F2C80091CEBA /* GlamGrooveSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlamGrooveSwiftUIApp.swift; sourceTree = "<group>"; };
 		90B66B8A2B99F2C80091CEBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,10 +57,6 @@
 		90B66B9D2B99F2C80091CEBA /* GlamGrooveSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlamGrooveSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B66BA12B99F2C80091CEBA /* GlamGrooveSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlamGrooveSwiftUIUITests.swift; sourceTree = "<group>"; };
 		90B66BA32B99F2C90091CEBA /* GlamGrooveSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlamGrooveSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		90B66BB12B99F9C70091CEBA /* Coco-Gothic-Light-trial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Coco-Gothic-Light-trial.ttf"; sourceTree = "<group>"; };
-		90B66BB72B99F9C70091CEBA /* Coco-Gothic-Regular-trial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Coco-Gothic-Regular-trial.ttf"; sourceTree = "<group>"; };
-		90B66BBC2B99F9C70091CEBA /* Coco-Gothic-Ultralight-trial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Coco-Gothic-Ultralight-trial.ttf"; sourceTree = "<group>"; };
-		90B66BBD2B99F9C70091CEBA /* Coco-Gothic-Bold-trial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Coco-Gothic-Bold-trial.ttf"; sourceTree = "<group>"; };
 		90B66BCB2B99FC2F0091CEBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		90B66BD12B99FF330091CEBA /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 		90B66BD32B9A060E0091CEBA /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -149,10 +153,11 @@
 		90B66BB02B99F8D90091CEBA /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				90B66BBD2B99F9C70091CEBA /* Coco-Gothic-Bold-trial.ttf */,
-				90B66BB12B99F9C70091CEBA /* Coco-Gothic-Light-trial.ttf */,
-				90B66BB72B99F9C70091CEBA /* Coco-Gothic-Regular-trial.ttf */,
-				90B66BBC2B99F9C70091CEBA /* Coco-Gothic-Ultralight-trial.ttf */,
+				907B6A762BA3305B0061091D /* Poppins-Bold.ttf */,
+				907B6A752BA3305B0061091D /* Poppins-Light.ttf */,
+				907B6A792BA3305B0061091D /* Poppins-Medium.ttf */,
+				907B6A772BA3305B0061091D /* Poppins-Regular.ttf */,
+				907B6A782BA3305B0061091D /* Poppins-SemiBold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				90CD73132BA08B0D006F8A15 /* UIExtention.swift */,
+				907B6A7F2BA3391F0061091D /* RoundButton.swift */,
 			);
 			path = UICommon;
 			sourceTree = "<group>";
@@ -299,13 +305,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90B66BCA2B99F9C70091CEBA /* Coco-Gothic-Bold-trial.ttf in Resources */,
 				90B66B8E2B99F2C80091CEBA /* Preview Assets.xcassets in Resources */,
+				907B6A7D2BA3305B0061091D /* Poppins-SemiBold.ttf in Resources */,
 				90B66B8B2B99F2C80091CEBA /* Assets.xcassets in Resources */,
-				90B66BC92B99F9C70091CEBA /* Coco-Gothic-Ultralight-trial.ttf in Resources */,
-				90B66BBE2B99F9C70091CEBA /* Coco-Gothic-Light-trial.ttf in Resources */,
-				90B66BC42B99F9C70091CEBA /* Coco-Gothic-Regular-trial.ttf in Resources */,
+				907B6A7B2BA3305B0061091D /* Poppins-Bold.ttf in Resources */,
+				907B6A7C2BA3305B0061091D /* Poppins-Regular.ttf in Resources */,
+				907B6A7E2BA3305B0061091D /* Poppins-Medium.ttf in Resources */,
 				90B66BD42B9A060E0091CEBA /* Launch Screen.storyboard in Resources */,
+				907B6A7A2BA3305B0061091D /* Poppins-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				907B6A802BA3391F0061091D /* RoundButton.swift in Sources */,
 				90B66BD22B99FF330091CEBA /* WelcomeScreen.swift in Sources */,
 				90B66B872B99F2C80091CEBA /* GlamGrooveSwiftUIApp.swift in Sources */,
 				90CD73142BA08B0D006F8A15 /* UIExtention.swift in Sources */,

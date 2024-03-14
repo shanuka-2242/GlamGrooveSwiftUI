@@ -7,16 +7,18 @@
 
 import SwiftUI
 
-enum CocoGothic: String {
-    case bold = "Coco-Gothic-Bold-trial"
-    case light = "Coco-Gothic-Light-trial"
-    case regular = "Coco-Gothic-Regular-trial"
-    case ultraLight = "Coco-Gothic-Ultralight-trial"
+enum Poppins: String {
+    case bold = "Poppins-Bold"
+    case semibold = "Poppins-SemiBold"
+    case light = "Poppins-Light"
+    case regular = "Poppins-Regular"
+    case medium = "Poppins-Medium"
+
 }
 
 extension Font {
     
-    static func customfont(_ font: CocoGothic, fontSize: CGFloat) -> Font {
+    static func customfont(_ font: Poppins, fontSize: CGFloat) -> Font {
         custom(font.rawValue, size: fontSize)
     }
 }

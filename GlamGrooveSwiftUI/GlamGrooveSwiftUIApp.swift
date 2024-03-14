@@ -11,7 +11,10 @@ import SwiftUI
 struct GlamGrooveSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            SplashScreen()
+            
+            NavigationView {
+                SplashScreen()
+            }
         }
     }
 }
