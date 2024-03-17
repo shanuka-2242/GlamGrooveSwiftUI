@@ -8,11 +8,35 @@
 import SwiftUI
 
 struct TabButton: View {
+    
+    @State var title: String = ""
+    @State var icon: String = ""
+    var isSelect: Bool  = false
+    var didSelect: (()->())
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+        
+        //Tab button
+        Button(action: {
+            debugPrint("Tab button tapped")
+            didSelect()
+        }, label: {
+            VStack{
+                Image(systemName: icon)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 20, height: 20)
+                
+                Text(title)
+                    .font(.customfont(.regular, fontSize: 14))
+            }
+        })
+        .foregroundColor(isSelect ? .black : .gray)
+        .frame(minWidth: 0, maxWidth: .infinity)    }
 }
 
 #Preview {
-    TabButton()
+    TabButton {
+        print("Test")
+    }
 }

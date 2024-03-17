@@ -9,71 +9,57 @@ import SwiftUI
 
 struct MainTabView: View {
     
-    //@StateObject var exploreVM = ExploreViewModel()
+    @StateObject var exploreVM = ExploreViewModel()
     
     var body: some View {
         VStack{
-            TabView(selection: .constant(1),
+            TabView(selection: $exploreVM.selectTab,
                     content:  {
+                ExploreView().tag(0)
                 ExploreView().tag(1)
-                ExploreView().tag(1)
-                ExploreView().tag(1)
+                ExploreView().tag(2)
 
             })
-            .onAppear{
-                UIScrollView.appearance().isScrollEnabled = false
-            }
+//            .onAppear{
+//                UIScrollView.appearance().isScrollEnabled = false
+//            }
             .tabViewStyle(.page(indexDisplayMode: .never))
             
-//            .onChange(of: Equatable, initial: <#T##Bool#>, <#T##action: () -> Void##() -> Void#>)
+            .onChange(of: exploreVM.selectTab) { newValue in
+                debugPrint("Sel Tab : \(newValue)")
+            }
             
             HStack {
                 
                 //Explore
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    VStack{
-                        Image(systemName: "magnifyingglass")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 20, height: 20)
-                        
-                        Text("Explore")
-                            .font(.customfont(.regular, fontSize: 14))
+                TabButton(title: "Explore", icon: "magnifyingglass", isSelect: exploreVM.selectTab == 0) {
+                    print("Explore")
+                    DispatchQueue.main.async {
+                        withAnimation{
+                            exploreVM.selectTab = 0
+                        }
                     }
-                })
-                .foregroundColor(.black)
-                .frame(minWidth: 0, maxWidth: .infinity)
+                }
                 
                 //Cart
-                Button(action: {}, label: {
-                    VStack{
-                        Image(systemName: "cart")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 20, height: 20)
-                        
-                        Text("Cart")
-                            .font(.customfont(.regular, fontSize: 14))
-                   }
-                })
-                .foregroundColor(.gray)
-                .frame(minWidth: 0, maxWidth: .infinity)
-
-                //Favourite
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    VStack{
-                        Image(systemName: "heart")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 20, height: 20)
-                        
-                        Text("Favourite")
-                            .font(.customfont(.regular, fontSize: 14))
+                TabButton(title: "Cart", icon: "cart", isSelect: exploreVM.selectTab == 1) {
+                    print("Cart")
+                    DispatchQueue.main.async {
+                        withAnimation{
+                            exploreVM.selectTab = 1
+                        }
                     }
-                })
-                .foregroundColor(.gray)
-                .frame(minWidth: 0, maxWidth: .infinity)
-
+                }
+                
+                //Favourites
+                TabButton(title: "Favourites", icon: "heart", isSelect: exploreVM.selectTab == 2) {
+                    print("Favourites")
+                    DispatchQueue.main.async {
+                        withAnimation{
+                            exploreVM.selectTab = 2
+                        }
+                    }
+                }
             }
             .padding(.top, 15)
             .padding(.bottom, .bottomInsets)
