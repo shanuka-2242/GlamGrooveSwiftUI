@@ -1,5 +1,5 @@
 //
-//  ExploreViewModel.swift
+//  TabButton.swift
 //  GlamGrooveSwiftUI
 //
 //  Created by NIBM-LAB04-PC04 on 2024-03-17.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct ExploreViewModel: View {
+struct TabButton: View {
     var body: some View {
-        Text("Hello from Explrer VM")
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
 #Preview {
-    ExploreViewModel()
+    TabButton()
 }
