@@ -16,13 +16,14 @@ struct RoundButton: View {
             didTap?()
         }, label: {
             Text(tittle)
-                .font(.customfont(.semibold, fontSize: 22))
-                .foregroundColor(.white)
+                .font(.customfont(.semibold, fontSize: 20))
+                .foregroundColor(.black)
                 .multilineTextAlignment(.center)
         })
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 60, maxHeight:60 )
-        .background(Color.secondaryText)
-        .cornerRadius(7)    }
+        .background(Color(white: 0.9))
+        .cornerRadius(7)
+    }
 }
 
 #Preview {
