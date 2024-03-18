@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		50C07A7B2BA6B29D0000911E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C07A7A2BA6B29D0000911E /* MainTabView.swift */; };
-		50C07A7E2BA6B5A80000911E /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C07A7D2BA6B5A80000911E /* ExploreView.swift */; };
+		50C07A7E2BA6B5A80000911E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C07A7D2BA6B5A80000911E /* HomeView.swift */; };
 		50C07A822BA6D5E20000911E /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C07A812BA6D5E20000911E /* TabButton.swift */; };
-		50C07A842BA6E0990000911E /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C07A832BA6E0990000911E /* ExploreViewModel.swift */; };
+		50C07A842BA6E0990000911E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C07A832BA6E0990000911E /* HomeViewModel.swift */; };
 		50C07A882BA6F5790000911E /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C07A872BA6F5790000911E /* ProductCell.swift */; };
 		50C07A8A2BA704180000911E /* CatagoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C07A892BA704180000911E /* CatagoryCell.swift */; };
 		907B6A7A2BA3305B0061091D /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 907B6A752BA3305B0061091D /* Poppins-Light.ttf */; };
@@ -49,9 +49,9 @@
 
 /* Begin PBXFileReference section */
 		50C07A7A2BA6B29D0000911E /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; wrapsLines = 1; };
-		50C07A7D2BA6B5A80000911E /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		50C07A7D2BA6B5A80000911E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		50C07A812BA6D5E20000911E /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; wrapsLines = 0; };
-		50C07A832BA6E0990000911E /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExploreViewModel.swift; path = GlamGrooveSwiftUI/UICommon/ExploreViewModel.swift; sourceTree = SOURCE_ROOT; };
+		50C07A832BA6E0990000911E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = GlamGrooveSwiftUI/UICommon/HomeViewModel.swift; sourceTree = SOURCE_ROOT; };
 		50C07A872BA6F5790000911E /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		50C07A892BA704180000911E /* CatagoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatagoryCell.swift; sourceTree = "<group>"; };
 		907B6A752BA3305B0061091D /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 		50C07A7C2BA6B5690000911E /* Explore */ = {
 			isa = PBXGroup;
 			children = (
-				50C07A7D2BA6B5A80000911E /* ExploreView.swift */,
+				50C07A7D2BA6B5A80000911E /* HomeView.swift */,
 			);
 			path = Explore;
 			sourceTree = "<group>";
@@ -223,7 +223,7 @@
 		90CD73112BA08ADE006F8A15 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				50C07A832BA6E0990000911E /* ExploreViewModel.swift */,
+				50C07A832BA6E0990000911E /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -375,9 +375,9 @@
 				90B66BD22B99FF330091CEBA /* WelcomeScreen.swift in Sources */,
 				90B66B872B99F2C80091CEBA /* GlamGrooveSwiftUIApp.swift in Sources */,
 				90CD73142BA08B0D006F8A15 /* UIExtention.swift in Sources */,
-				50C07A7E2BA6B5A80000911E /* ExploreView.swift in Sources */,
+				50C07A7E2BA6B5A80000911E /* HomeView.swift in Sources */,
 				50C07A8A2BA704180000911E /* CatagoryCell.swift in Sources */,
-				50C07A842BA6E0990000911E /* ExploreViewModel.swift in Sources */,
+				50C07A842BA6E0990000911E /* HomeViewModel.swift in Sources */,
 				50C07A882BA6F5790000911E /* ProductCell.swift in Sources */,
 				50C07A822BA6D5E20000911E /* TabButton.swift in Sources */,
 				50C07A7B2BA6B29D0000911E /* MainTabView.swift in Sources */,

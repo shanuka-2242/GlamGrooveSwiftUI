@@ -9,54 +9,65 @@ import SwiftUI
 
 struct MainTabView: View {
     
-    @StateObject var exploreVM = ExploreViewModel()
+    @StateObject var homeVM = HomeViewModel()
     
     var body: some View {
         VStack{
-            TabView(selection: $exploreVM.selectTab,
-                    content:  {
-                ExploreView().tag(0)
-                ExploreView().tag(1)
-                ExploreView().tag(2)
-
-            })
+            
+            TabView(selection: $homeVM.selectTab){
+                                    
+                HomeView().tag(0)
+                HomeView().tag(1)
+                HomeView().tag(2)
+                HomeView().tag(3)
+            }
 //            .onAppear{
 //                UIScrollView.appearance().isScrollEnabled = false
 //            }
             .tabViewStyle(.page(indexDisplayMode: .never))
             
-            .onChange(of: exploreVM.selectTab) { newValue in
+            .onChange(of: homeVM.selectTab) { newValue in
                 debugPrint("Sel Tab : \(newValue)")
             }
             
             HStack {
                 
+                //Home
+                TabButton(title: "Home", icon: "house", isSelect: homeVM.selectTab == 0) {
+                    print("Home")
+                    DispatchQueue.main.async {
+                        withAnimation{
+                            homeVM.selectTab = 0
+                        }
+                    }
+                }
+                
                 //Explore
-                TabButton(title: "Explore", icon: "magnifyingglass", isSelect: exploreVM.selectTab == 0) {
+                TabButton(title: "Explore", icon: "magnifyingglass", isSelect: homeVM.selectTab == 1) {
                     print("Explore")
                     DispatchQueue.main.async {
                         withAnimation{
-                            exploreVM.selectTab = 0
+                            homeVM.selectTab = 1
                         }
                     }
                 }
                 
                 //Cart
-                TabButton(title: "Cart", icon: "cart", isSelect: exploreVM.selectTab == 1) {
+                TabButton(title: "Cart", icon: "cart", isSelect: homeVM.selectTab == 2) {
                     print("Cart")
                     DispatchQueue.main.async {
                         withAnimation{
-                            exploreVM.selectTab = 1
+                            homeVM.selectTab = 2
                         }
                     }
                 }
                 
                 //Favourites
-                TabButton(title: "Favourites", icon: "heart", isSelect: exploreVM.selectTab == 2) {
+                TabButton(title: "Favourites", icon: "heart", isSelect: homeVM.selectTab == 3) {
                     print("Favourites")
                     DispatchQueue.main.async {
                         withAnimation{
-                            exploreVM.selectTab = 2
+                            homeVM.selectTab = 3
                         }
                     }
                 }

@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-class ExploreViewModel: ObservableObject
+class HomeViewModel: ObservableObject
 {
-    static var shared: ExploreViewModel = ExploreViewModel()
+    static var shared: HomeViewModel = HomeViewModel()
     @Published var selectTab: Int = 0
 }
