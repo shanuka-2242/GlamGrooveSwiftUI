@@ -13,18 +13,19 @@ struct ProductCell: View {
     
     var body: some View {
         VStack{
-            Image("SatinMaxiJeans")
+            Image("Sisi Relaxed Shirt 1")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 200, height: 100)
             
-            Spacer()
+                .padding()
+            //Spacer()
             
             Text("Satin Maxi Jeans")
                 .font(.customfont(.medium, fontSize: 16))
                 .foregroundColor(.black)
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-            
+
             Spacer()
             
             HStack{

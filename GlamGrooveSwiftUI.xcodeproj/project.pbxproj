@@ -10,9 +10,10 @@
 		50C07A7B2BA6B29D0000911E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C07A7A2BA6B29D0000911E /* MainTabView.swift */; };
 		50C07A7E2BA6B5A80000911E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C07A7D2BA6B5A80000911E /* HomeView.swift */; };
 		50C07A822BA6D5E20000911E /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C07A812BA6D5E20000911E /* TabButton.swift */; };
-		50C07A842BA6E0990000911E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C07A832BA6E0990000911E /* HomeViewModel.swift */; };
 		50C07A882BA6F5790000911E /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C07A872BA6F5790000911E /* ProductCell.swift */; };
 		50C07A8A2BA704180000911E /* CatagoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C07A892BA704180000911E /* CatagoryCell.swift */; };
+		90396E082BA9D47B00F4834B /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90396E072BA9D47B00F4834B /* ProductModel.swift */; };
+		90396E0B2BA9D4B700F4834B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90396E0A2BA9D4B700F4834B /* HomeViewModel.swift */; };
 		907B6A7A2BA3305B0061091D /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 907B6A752BA3305B0061091D /* Poppins-Light.ttf */; };
 		907B6A7B2BA3305B0061091D /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 907B6A762BA3305B0061091D /* Poppins-Bold.ttf */; };
 		907B6A7C2BA3305B0061091D /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 907B6A772BA3305B0061091D /* Poppins-Regular.ttf */; };
@@ -52,9 +53,10 @@
 		50C07A7A2BA6B29D0000911E /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		50C07A7D2BA6B5A80000911E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		50C07A812BA6D5E20000911E /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; wrapsLines = 0; };
-		50C07A832BA6E0990000911E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = GlamGrooveSwiftUI/UICommon/HomeViewModel.swift; sourceTree = SOURCE_ROOT; };
 		50C07A872BA6F5790000911E /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		50C07A892BA704180000911E /* CatagoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatagoryCell.swift; sourceTree = "<group>"; };
+		90396E072BA9D47B00F4834B /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		90396E0A2BA9D4B700F4834B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		907B6A752BA3305B0061091D /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
 		907B6A762BA3305B0061091D /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		907B6A772BA3305B0061091D /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
@@ -110,12 +112,28 @@
 			path = MainTab;
 			sourceTree = "<group>";
 		};
-		50C07A7C2BA6B5690000911E /* Explore */ = {
+		50C07A7C2BA6B5690000911E /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				50C07A7D2BA6B5A80000911E /* HomeView.swift */,
 			);
-			path = Explore;
+			path = Home;
+			sourceTree = "<group>";
+		};
+		90396E062BA9D46800F4834B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				90396E072BA9D47B00F4834B /* ProductModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		90396E092BA9D49800F4834B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				90396E0A2BA9D4B700F4834B /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		90B66B7A2B99F2C80091CEBA = {
@@ -142,8 +160,8 @@
 		90B66B852B99F2C80091CEBA /* GlamGrooveSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				90CD73122BA08AEF006F8A15 /* Model */,
-				90CD73112BA08ADE006F8A15 /* ViewModel */,
+				90396E092BA9D49800F4834B /* ViewModel */,
+				90396E062BA9D46800F4834B /* Model */,
 				90CD73102BA08AD2006F8A15 /* UICommon */,
 				90B66BCC2B99FE000091CEBA /* View */,
 				90B66BCB2B99FC2F0091CEBA /* Info.plist */,
@@ -195,7 +213,7 @@
 		90B66BCC2B99FE000091CEBA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				50C07A7C2BA6B5690000911E /* Explore */,
+				50C07A7C2BA6B5690000911E /* Home */,
 				50C07A792BA6B2830000911E /* MainTab */,
 				90B66BD02B99FEF80091CEBA /* Welcome */,
 			);
@@ -221,21 +239,6 @@
 				D01FE0522BA87CC500F88C55 /* SectionTitleAll.swift */,
 			);
 			path = UICommon;
-			sourceTree = "<group>";
-		};
-		90CD73112BA08ADE006F8A15 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				50C07A832BA6E0990000911E /* HomeViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		90CD73122BA08AEF006F8A15 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,7 +383,8 @@
 				90CD73142BA08B0D006F8A15 /* UIExtention.swift in Sources */,
 				50C07A7E2BA6B5A80000911E /* HomeView.swift in Sources */,
 				50C07A8A2BA704180000911E /* CatagoryCell.swift in Sources */,
-				50C07A842BA6E0990000911E /* HomeViewModel.swift in Sources */,
+				90396E082BA9D47B00F4834B /* ProductModel.swift in Sources */,
+				90396E0B2BA9D4B700F4834B /* HomeViewModel.swift in Sources */,
 				50C07A882BA6F5790000911E /* ProductCell.swift in Sources */,
 				50C07A822BA6D5E20000911E /* TabButton.swift in Sources */,
 				D01FE0532BA87CC500F88C55 /* SectionTitleAll.swift in Sources */,

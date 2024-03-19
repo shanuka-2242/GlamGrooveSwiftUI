@@ -31,11 +31,16 @@ struct SplashScreen: View {
                         .multilineTextAlignment(.center)
                         .padding(.bottom, 30)
                     
-                    NavigationLink(destination: MainTabView()) { 
-                        //RoundButton(tittle: "Start Shopping"){}
-                        
-                    }
-
+                    NavigationLink(destination: MainTabView(), label:{
+                        Text("Start Shopping")
+                            .font(.customfont(.semibold, fontSize: 20))
+                            .foregroundColor(.white)
+                            .multilineTextAlignment(.center)
+                            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 55, maxHeight:55 )
+                            .background(Color.gray.opacity(0.9))
+                            .cornerRadius(10)
+                    })
+                    
                     Spacer()
                         .frame(height: 60)
                 }
