@@ -13,7 +13,7 @@ struct ProductCell: View {
     
     var body: some View {
         VStack{
-            Image("Sisi Relaxed Shirt 1")
+            Image("SisiRelaxedShirt")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 200, height: 100)
