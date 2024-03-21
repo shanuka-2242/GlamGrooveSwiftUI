@@ -9,8 +9,8 @@ import SwiftUI
 
 struct TabButton: View {
     
-    @State var title: String = ""
-    @State var icon: String = ""
+    @State var title: String = "Title"
+    @State var icon: String = "Icon"
     var isSelect: Bool  = false
     var didSelect: (()->())
 
@@ -18,7 +18,7 @@ struct TabButton: View {
         
         //Tab button
         Button(action: {
-            debugPrint("Tab button tapped")
+            //debugPrint("Tab button tapped")
             didSelect()
         }, label: {
             VStack{
@@ -37,6 +37,6 @@ struct TabButton: View {
 
 #Preview {
     TabButton {
-        print("Test")
+        //print("Test")
     }
 }

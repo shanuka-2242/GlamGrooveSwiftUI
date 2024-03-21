@@ -162,7 +162,7 @@
 			children = (
 				90396E092BA9D49800F4834B /* ViewModel */,
 				90396E062BA9D46800F4834B /* Model */,
-				90CD73102BA08AD2006F8A15 /* UICommon */,
+				90CD73102BA08AD2006F8A15 /* CommonComponents */,
 				90B66BCC2B99FE000091CEBA /* View */,
 				90B66BCB2B99FC2F0091CEBA /* Info.plist */,
 				90B66BB02B99F8D90091CEBA /* Fonts */,
@@ -228,7 +228,7 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
-		90CD73102BA08AD2006F8A15 /* UICommon */ = {
+		90CD73102BA08AD2006F8A15 /* CommonComponents */ = {
 			isa = PBXGroup;
 			children = (
 				90CD73132BA08B0D006F8A15 /* UIExtention.swift */,
@@ -238,7 +238,7 @@
 				50C07A892BA704180000911E /* CatagoryCell.swift */,
 				D01FE0522BA87CC500F88C55 /* SectionTitleAll.swift */,
 			);
-			path = UICommon;
+			path = CommonComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

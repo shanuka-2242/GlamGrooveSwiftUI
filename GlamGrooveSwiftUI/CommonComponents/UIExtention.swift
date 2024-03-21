@@ -73,15 +73,6 @@ extension CGFloat {
 
 extension Color {
     
-    static var primaryText: Color {
-        return Color.black
-    }
-    
-    static var secondaryText: Color {
-        return Color.gray
-    }
-    
-    
     init(hex: String) {
         let hex = hex.trimmingCharacters(in: .alphanumerics.inverted)
         var int: UInt64 = 0

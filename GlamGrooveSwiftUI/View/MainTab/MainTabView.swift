@@ -19,11 +19,8 @@ struct MainTabView: View {
                 HomeView().tag(0)
                 HomeView().tag(1)
                 HomeView().tag(2)
-                //omeView().tag(3)
             }
-//            .onAppear{
-//                UIScrollView.appearance().isScrollEnabled = false
-//            }
+            
             .tabViewStyle(.page(indexDisplayMode: .never))
             
             .onChange(of: homeVM.selectTab) { newValue in
@@ -61,16 +58,6 @@ struct MainTabView: View {
                         }
                     }
                 }
-                
-                //Favourites
-//                TabButton(title: "Favourites", icon: "heart", isSelect: homeVM.selectTab == 3) {
-//                    print("Favourites")
-//                    DispatchQueue.main.async {
-//                        withAnimation{
-//                            homeVM.selectTab = 3
-//                        }
-//                    }
-//                }
             }
             .padding(.top, 15)
             .padding(.bottom, .bottomInsets)

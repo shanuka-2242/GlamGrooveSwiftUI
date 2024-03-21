@@ -9,27 +9,34 @@ import SwiftUI
 
 struct ProductCell: View {
     
+    @State var productImage: String = "EssentialSlubPocketTShirt"
+    @State var productName: String = "Satin Maxi Jeans Puka"
+    @State var productPrice: String = "3000.00"
+
     var didAddCart: (()->())?
     
     var body: some View {
         VStack{
-            Image("SisiRelaxedShirt")
+            Image(productImage)
                 .resizable()
-                .scaledToFit()
-                .frame(width: 200, height: 100)
+                .aspectRatio(contentMode: .fit)
+                .frame(height: 130)
+                .cornerRadius(8)
+                .shadow(color: Color.black.opacity(0.4), radius: 5, x: 0, y: 2)
             
-                .padding()
+                .padding(.bottom, 7)
             //Spacer()
             
-            Text("Satin Maxi Jeans")
-                .font(.customfont(.medium, fontSize: 16))
+            Text(productName)
+                .font(.customfont(.regular, fontSize: 16))
                 .foregroundColor(.black)
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                .padding(.bottom, 5)
 
             Spacer()
             
             HStack{
-                Text("$125.00")
+                Text("Rs " + productPrice)
                     .font(.customfont(.medium, fontSize: 16))
                     .foregroundColor(.black)
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)

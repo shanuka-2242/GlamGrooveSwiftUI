@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RoundButton: View {
+    
     @State var tittle: String = ""
     var didTap: (()->())?
     

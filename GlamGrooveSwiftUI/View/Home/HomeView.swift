@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct HomeView: View {
+    
     @State var searchText: String = ""
+    @ObservedObject var homeViewModel = HomeViewModel()
+    
     var body: some View {
-        //Text("Hello from Home VM")
         ZStack{
-            ScrollView{
-                VStack{
+            ScrollView {
+                VStack {
                     
                     HStack(spacing: 15){
                         
@@ -37,7 +39,11 @@ struct HomeView: View {
                         .resizable()
                         .scaledToFill()
                         .padding(.top)
-                    
+                        .onAppear {
+                            Task {
+                                await homeViewModel.getProducts()
+                            }
+                        }
                     SectionTitleAll(title: "Exclusive Offers", titleAll: "See All"){
                         
                     }
