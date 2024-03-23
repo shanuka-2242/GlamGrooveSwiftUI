@@ -1,15 +1,18 @@
+//
+//  ProductModel.swift
+//  ClassTuteFour
+//
+//  Created by User Account  on 2024-03-22.
+//
+
 import Foundation
 
-struct ProductModel: Codable {
-    let id, catagoryName, productName, productPrice: String
-    let productImage, productDescription: String
-    let v: Int
-    let productID: String
-
-    enum CodingKeys: String, CodingKey {
-        case id = "_id"
-        case catagoryName, productName, productPrice, productImage, productDescription
-        case v = "__v"
-        case productID = "productId"
-    }
+struct Product: Codable {
+    
+    let productId: String
+    let productName: String
+    let productPrice: String
+    let productImage: String
+    let productDescription: String
+    
 }

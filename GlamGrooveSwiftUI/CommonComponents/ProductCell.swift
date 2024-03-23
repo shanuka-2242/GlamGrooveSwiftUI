@@ -1,22 +1,20 @@
 //
 //  ProductCell.swift
-//  GlamGrooveSwiftUI
+//  ClassTuteFour
 //
-//  Created by NIBM-LAB04-PC04 on 2024-03-17.
+//  Created by User Account  on 2024-03-22.
 //
 
 import SwiftUI
 
 struct ProductCell: View {
     
-    @State var productImage: String = "EssentialSlubPocketTShirt"
-    @State var productName: String = "Satin Maxi Jeans Puka"
+    @State var productImage: String = "SisiRelaxedShirt"
+    @State var productName: String = "Sisi Relaxed Shirt"
     @State var productPrice: String = "3000.00"
 
-    var didAddCart: (()->())?
-    
     var body: some View {
-        VStack{
+        VStack {
             Image(productImage)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -28,7 +26,7 @@ struct ProductCell: View {
             //Spacer()
             
             Text(productName)
-                .font(.customfont(.regular, fontSize: 16))
+                .font(.customfont(.regular, fontSize: 15))
                 .foregroundColor(.black)
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                 .padding(.bottom, 5)
@@ -37,13 +35,17 @@ struct ProductCell: View {
             
             HStack{
                 Text("Rs " + productPrice)
-                    .font(.customfont(.medium, fontSize: 16))
+                    .font(.customfont(.medium, fontSize: 15))
                     .foregroundColor(.black)
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                 
                 Spacer()
                 
-                Button(action: {didAddCart?()}, label: {
+                Button(action: {
+                
+                    //print("Add to cart tapped.")
+                    
+                }, label: {
                     Image(systemName: "plus.circle.fill")
                         .resizable()
                         .scaledToFit()
@@ -55,8 +57,7 @@ struct ProductCell: View {
         .padding(15)
         .frame(width: 180, height: 230)
         .overlay(RoundedRectangle(cornerRadius: 15)
-            .stroke(.gray.opacity(0.7), lineWidth: 1))
-    }
+            .stroke(.gray.opacity(0.7), lineWidth: 1))    }
 }
 
 #Preview {
