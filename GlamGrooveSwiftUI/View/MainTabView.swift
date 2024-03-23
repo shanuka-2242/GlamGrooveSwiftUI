@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainTabView: View {
     
-    @StateObject var homeVM = HomeViewModel()
+    @StateObject var homeVM = ProductViewModel()
     
     var body: some View {
         
@@ -31,7 +31,9 @@ struct MainTabView: View {
                 }
         }
         .accentColor(.black)
+        .navigationBarBackButtonHidden(true)
     }
+
 }
 
 #Preview {

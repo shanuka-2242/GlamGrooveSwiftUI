@@ -13,7 +13,7 @@ struct GlamGrooveSwiftUIApp: App {
         WindowGroup {
             
             NavigationView {
-                SplashScreen()
+                WelcomeScreen()
             }
         }
     }

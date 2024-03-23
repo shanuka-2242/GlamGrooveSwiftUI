@@ -7,9 +7,14 @@
 
 import SwiftUI
 
-struct SplashScreen: View {
+struct WelcomeScreen: View {
+    
+    //@Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
-        NavigationView(content: {
+        
+        NavigationView {
+            
             ZStack {
                 Image("WelcomeScreenImage")
                     .resizable()
@@ -47,13 +52,12 @@ struct SplashScreen: View {
                 .padding(.horizontal, 20)
             }
             .navigationTitle("")
-            .navigationBarBackButtonHidden(true)
             .navigationBarHidden(true)
             .ignoresSafeArea()
-        })
+        }
     }
 }
 
 #Preview {
-    SplashScreen()
+    WelcomeScreen()
 }

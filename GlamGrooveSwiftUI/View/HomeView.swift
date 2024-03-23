@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject private var productsVM = HomeViewModel()
+    @StateObject private var productsVM = ProductViewModel()
     
     let adaptiveColumns = [
         GridItem(.adaptive(minimum: 180))
@@ -37,20 +37,21 @@ struct HomeView: View {
                         .resizable()
                         .scaledToFill()
                         .padding(.bottom)
+                        .padding(.horizontal, 10)
                     
                     LazyVGrid(columns: adaptiveColumns, spacing: 20) {
-                        
-                        
                         ForEach(filteredProducts, id: \.productId) { product in
-                            
-                            ProductCell(productImage: product.productImage, productName: product.productName, productPrice: product.productPrice)
+                            NavigationLink(destination: ProductDetailsView (product: product)) {
+                                ProductCell(productImage: product.productImage, productName: product.productName, productPrice: product.productPrice)
+                            }
                         }
                     }
                     .padding(.horizontal, 8)
                 }
-                
             }
             .navigationTitle("Products")
+            .navigationBarTitleDisplayMode(.automatic)
+            //.navigationBarBackButtonHidden(true)
             .searchable(text: $searchTerm, prompt: "Search Products")
             .onAppear(perform: {
                 productsVM.fetchProducts()

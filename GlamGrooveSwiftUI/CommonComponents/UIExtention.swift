@@ -7,6 +7,13 @@
 
 import SwiftUI
 
+final class CommonFunctions {
+    
+    static func availableSizes(_ inputString: String, by delimiter: Character) -> [String] {
+        return inputString.split(separator: delimiter).map { String($0) }
+    }
+}
+
 enum Poppins: String {
     case bold = "Poppins-Bold"
     case semibold = "Poppins-SemiBold"
@@ -68,5 +75,4 @@ extension CGFloat {
         }
         return 0.0
     }
-    
 }

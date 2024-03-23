@@ -30,7 +30,7 @@ struct ProductCell: View {
                 .foregroundColor(.black)
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                 .padding(.bottom, 5)
-
+            
             Spacer()
             
             HStack{
@@ -42,7 +42,7 @@ struct ProductCell: View {
                 Spacer()
                 
                 Button(action: {
-                
+                    
                     //print("Add to cart tapped.")
                     
                 }, label: {
@@ -57,7 +57,8 @@ struct ProductCell: View {
         .padding(15)
         .frame(width: 180, height: 230)
         .overlay(RoundedRectangle(cornerRadius: 15)
-            .stroke(.gray.opacity(0.7), lineWidth: 1))    }
+            .stroke(.gray.opacity(0.7), lineWidth: 1))
+    }
 }
 
 #Preview {

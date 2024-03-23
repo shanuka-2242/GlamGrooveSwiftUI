@@ -14,5 +14,7 @@ struct Product: Codable {
     let productPrice: String
     let productImage: String
     let productDescription: String
+    let availableSizes: String
+    let ratings: String
     
 }

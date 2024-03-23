@@ -1,18 +1,28 @@
 //
-//  StartRatingView.swift
-//  GlamGrooveSwiftUI
+//  CustomIterationView.swift
+//  ClassTuteFour
 //
 //  Created by User Account  on 2024-03-23.
 //
 
 import SwiftUI
 
-struct StartRatingView: View {
+struct StarRatingView: View {
+    
+    let rating: Int
+    let maxRating: Int = 5
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            
+            ForEach(1...maxRating, id: \.self) { index in
+                Image(systemName: index <= rating ? "star.fill" : "star")
+                    .foregroundColor(index <= rating ? .yellow : .yellow)
+            }
+        }
     }
 }
 
-#Preview {
-    StartRatingView()
-}
+//#Preview {
+//    CustomIterationView(rating: <#Int#>)
+//}
