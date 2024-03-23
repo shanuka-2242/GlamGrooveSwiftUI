@@ -7,10 +7,8 @@
 
 import Foundation
 
-final class HomeViewModel: ObservableObject {
+final class ProductViewModel: ObservableObject {
     
-    static var shared: HomeViewModel = HomeViewModel()
-    @Published var selectTab: Int = 0
     @Published var products: [Product] = []
     @Published var hasError = false
     @Published var error: ErrorCases?
