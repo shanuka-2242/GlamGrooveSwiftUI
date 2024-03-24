@@ -9,8 +9,8 @@ import Foundation
 
 final class ExploreViewModel: ObservableObject {
     
-    //@Published var productsVM = ProductViewModel()
     @Published var products: [Product] = []
+    @Published var filteredProductList: [Product] = []
     @Published var hasError = false
     @Published var error: ErrorCases?
     @Published private(set) var isRefreshing = false
@@ -75,8 +75,40 @@ final class ExploreViewModel: ObservableObject {
         return returnedProductArray
     }
     
-    // Price range selected function
-    //    func getFilteredProducts(productCetagory: String, minPrice: String, maxPrice: String) -> [Product]{
-    //
-    //    }
+    //Price range selected function
+    func getFilteredProducts(productCategory: String, minPrice: String, maxPrice: String) -> [Product] {
+        
+        var returnedProductArray = [Product]()
+        let dMinPrice = Double(minPrice)
+        let dMaxPrice = Double(maxPrice)
+        
+        if(products.count > 0) {
+            
+            if(productCategory == "All"){
+                
+                returnedProductArray = products.filter { product in
+                    guard let dProductPrice = Double(product.productPrice) else {
+                        return false
+                    }
+                    return dProductPrice >= dMinPrice ?? 0 &&
+                    dProductPrice <= dMaxPrice ?? 0
+                }
+            }
+            else {
+                
+                returnedProductArray = products.filter { product in
+                    guard let dProductPrice = Double(product.productPrice) else {
+                        return false
+                    }
+                    return product.catagoryName == productCategory &&
+                    dProductPrice >= dMinPrice ?? 0 &&
+                    dProductPrice <= dMaxPrice ?? 0
+                }
+            }
+        }
+        else {
+            return returnedProductArray
+        }
+        return returnedProductArray
+    }
 }

@@ -22,7 +22,6 @@ struct ExploreView: View {
     @State var minimumPrice: String = ""
     @State var maximumPrice: String = ""
     @State var isPriceAnyRangeSelected: Bool = false
-    //@state private var filteredProductList = [Product]()
     
     var body: some View {
         
@@ -74,14 +73,14 @@ struct ExploreView: View {
                                         }
                                     }
                                 
-                                TextField("Minimum Price", text: $minimumPrice)
+                                TextField("Minimum Price (Rs)", text: $minimumPrice)
                                     .padding(.all, 12)
                                     .background(Color.gray.opacity(0.3))
                                     .cornerRadius(10)
                                     .font(.customfont(.regular, fontSize: 15))
                                     .disabled(isPriceAnyRangeSelected)
                                 
-                                TextField("Maximum Price", text: $maximumPrice)
+                                TextField("Maximum Price (Rs)", text: $maximumPrice)
                                     .padding(.all, 12)
                                     .background(Color.gray.opacity(0.3))
                                     .cornerRadius(10)
@@ -89,11 +88,13 @@ struct ExploreView: View {
                                     .disabled(isPriceAnyRangeSelected)
                                 
                                 Button(action: {
+                                    
+                                    //Price range selected
                                     if(isPriceAnyRangeSelected) {
 
                                         if(explorerVM.getFilteredProducts(productCetagory: selectedCategory).count > 0) {
                                             
-//                                            filteredProductList = explorerVM.getFilteredProducts(productCetagory: selectedCategory)
+                                            explorerVM.filteredProductList = explorerVM.getFilteredProducts(productCetagory: selectedCategory)
                                         }
                                         else{
                                             
@@ -103,14 +104,21 @@ struct ExploreView: View {
                                     }
                                     else {
                                         
-                                        if( !minimumPrice.isEmpty && !maximumPrice.isEmpty) {
+                                        //Price range unseleceted
+                                        if( !minimumPrice.isEmpty && !maximumPrice.isEmpty      ) {
                                             if(minimumPrice.hasSuffix(".00") && maximumPrice.hasSuffix(".00")) {
-                                                
-                                                //Logic
-                                                
+                                                if(Double(minimumPrice) ?? 0 < Double(maximumPrice) ?? 0) {
+                                                    
+                                                    explorerVM.filteredProductList = explorerVM.getFilteredProducts(productCategory: selectedCategory, minPrice: minimumPrice, maxPrice: maximumPrice)
+                                                    
+                                                }
+                                                else {
+                                                    errorMessage = "Minimum price cannot be smaller than maximum price"
+                                                    isAlertShown.toggle()
+                                                }
                                             } else{
                                                 
-                                                errorMessage = "Input text format similar to '3000.00'."
+                                                errorMessage = "Input price format in 3000.00."
                                                 isAlertShown.toggle()
                                             }
                                         } else {
@@ -142,7 +150,7 @@ struct ExploreView: View {
                         }
                         
                         LazyVGrid(columns: adaptiveColumns, spacing: 20) {
-                            ForEach(explorerVM.getFilteredProducts(productCetagory: selectedCategory), id: \.productId) { product in
+                            ForEach(explorerVM.filteredProductList, id: \.productId) { product in
                                 NavigationLink(destination: ProductDetailsView (product: product)) {
                                     ProductCell(productImage: product.productImage,
                                                 productName: product.productName,
