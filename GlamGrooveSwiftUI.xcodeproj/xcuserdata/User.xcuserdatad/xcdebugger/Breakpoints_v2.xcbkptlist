@@ -3,4 +3,84 @@
    uuid = "46FEDB9E-99DF-44F4-94A7-81DF5F7ED60C"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C759F5A6-0EE7-4DC3-A51E-39916B129B46"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GlamGrooveSwiftUI/View/ExploreView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D552D7F5-9F4C-4BA7-87AB-28E54347D1BE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GlamGrooveSwiftUI/View/ExploreView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F94D61E9-CB05-4BCC-BE97-B9474DB52172"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GlamGrooveSwiftUI/View/ExploreView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "F94D61E9-CB05-4BCC-BE97-B9474DB52172 - a75af4a7fa5ab63c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (GlamGrooveSwiftUI.Product) -&gt; SwiftUI.NavigationLink&lt;GlamGrooveSwiftUI.ProductCell, GlamGrooveSwiftUI.ProductDetailsView&gt; in closure #3 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;GlamGrooveSwiftUI.Product&gt;, Swift.String, SwiftUI.NavigationLink&lt;GlamGrooveSwiftUI.ProductCell, GlamGrooveSwiftUI.ProductDetailsView&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(SwiftUI.StrokeShapeView&lt;SwiftUI.RoundedRectangle, SwiftUI.Color, SwiftUI.EmptyView&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt;&gt;, SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(SwiftUI.StrokeShapeView&lt;SwiftUI.RoundedRectangle, SwiftUI.Color, SwiftUI.EmptyView&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt;&gt;, SwiftUI.LazyVGrid&lt;SwiftUI.ForEach&lt;Swift.Array&lt;GlamGrooveSwiftUI.Product&gt;, Swift.String, SwiftUI.NavigationLink&lt;GlamGrooveSwiftUI.ProductCell, GlamGrooveSwiftUI.ProductDetailsView&gt;&gt;&gt;)&gt; in closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.ProgressView&lt;SwiftUI.EmptyView, SwiftUI.EmptyView&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationTitle(SwiftUI.LocalizedStringKey) -&gt; some&gt;&gt;.0 in GlamGrooveSwiftUI.ExploreView.body.getter : some"
+                  moduleName = "GlamGrooveSwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/User/Desktop/GlamGrooveSwiftUI/GlamGrooveSwiftUI/View/ExploreView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "144"
+                  endingLineNumber = "144">
+               </Location>
+               <Location
+                  uuid = "F94D61E9-CB05-4BCC-BE97-B9474DB52172 - fcfab7e4d73e9eed"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; GlamGrooveSwiftUI.ProductCell in closure #1 (GlamGrooveSwiftUI.Product) -&gt; SwiftUI.NavigationLink&lt;GlamGrooveSwiftUI.ProductCell, GlamGrooveSwiftUI.ProductDetailsView&gt; in closure #3 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;GlamGrooveSwiftUI.Product&gt;, Swift.String, SwiftUI.NavigationLink&lt;GlamGrooveSwiftUI.ProductCell, GlamGrooveSwiftUI.ProductDetailsView&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(SwiftUI.StrokeShapeView&lt;SwiftUI.RoundedRectangle, SwiftUI.Color, SwiftUI.EmptyView&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt;&gt;, SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(SwiftUI.StrokeShapeView&lt;SwiftUI.RoundedRectangle, SwiftUI.Color, SwiftUI.EmptyView&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt;&gt;, SwiftUI.LazyVGrid&lt;SwiftUI.ForEach&lt;Swift.Array&lt;GlamGrooveSwiftUI.Product&gt;, Swift.String, SwiftUI.NavigationLink&lt;GlamGrooveSwiftUI.ProductCell, GlamGrooveSwiftUI.ProductDetailsView&gt;&gt;&gt;)&gt; in closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.ProgressView&lt;SwiftUI.EmptyView, SwiftUI.EmptyView&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationTitle(SwiftUI.LocalizedStringKey) -&gt; some&gt;&gt;.0 in GlamGrooveSwiftUI.ExploreView.body.getter : some"
+                  moduleName = "GlamGrooveSwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/User/Desktop/GlamGrooveSwiftUI/GlamGrooveSwiftUI/View/ExploreView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "144"
+                  endingLineNumber = "144">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

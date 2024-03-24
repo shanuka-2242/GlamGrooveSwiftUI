@@ -12,7 +12,7 @@ struct ProductCell: View {
     @State var productImage: String = "SisiRelaxedShirt"
     @State var productName: String = "Sisi Relaxed Shirt"
     @State var productPrice: String = "3000.00"
-
+    
     var body: some View {
         VStack {
             Image(productImage)
@@ -21,9 +21,7 @@ struct ProductCell: View {
                 .frame(height: 130)
                 .cornerRadius(8)
                 .shadow(color: Color.black.opacity(0.4), radius: 5, x: 0, y: 2)
-            
                 .padding(.bottom, 7)
-            //Spacer()
             
             Text(productName)
                 .font(.customfont(.regular, fontSize: 15))
@@ -41,17 +39,11 @@ struct ProductCell: View {
                 
                 Spacer()
                 
-                Button(action: {
-                    
-                    //print("Add to cart tapped.")
-                    
-                }, label: {
-                    Image(systemName: "plus.circle.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 25, height: 25)
-                        .foregroundColor(.black)
-                })
+                Image(systemName: "plus.circle.fill")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 25, height: 25)
+                    .foregroundColor(.black)
             }
         }
         .padding(15)

@@ -1,14 +1,15 @@
 //
-//  ProductViewModel.swift
-//  ClassTuteFour
+//  ExploreViewModel.swift
+//  GlamGrooveSwiftUI
 //
-//  Created by User Account  on 2024-03-22.
+//  Created by User Account  on 2024-03-24.
 //
 
 import Foundation
 
-final class ProductViewModel: ObservableObject {
+final class ExploreViewModel: ObservableObject {
     
+    //@Published var productsVM = ProductViewModel()
     @Published var products: [Product] = []
     @Published var hasError = false
     @Published var error: ErrorCases?
@@ -53,4 +54,29 @@ final class ProductViewModel: ObservableObject {
                 }.resume()
         }
     }
+    
+    // Price range not selected function
+    func getFilteredProducts(productCetagory: String) -> [Product]{
+        
+        var returnedProductArray = [Product]()
+        
+        if(productCetagory == "All"){
+            returnedProductArray = products
+        }
+        else {
+            if(products.count > 0) {
+                returnedProductArray = products.filter { $0.catagoryName == productCetagory }
+                
+            }
+            else {
+                return returnedProductArray
+            }
+        }
+        return returnedProductArray
+    }
+    
+    // Price range selected function
+    //    func getFilteredProducts(productCetagory: String, minPrice: String, maxPrice: String) -> [Product]{
+    //
+    //    }
 }

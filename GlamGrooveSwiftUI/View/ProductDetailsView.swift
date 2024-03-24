@@ -10,8 +10,9 @@ import SwiftUI
 struct ProductDetailsView: View {
     
     var product: Product
-    @State var selectedSize: String = ""
     
+    @State var selectedSize: String = "UK-6"
+        
     var body: some View {
             ScrollView {
                 VStack(spacing: 10) {
@@ -56,10 +57,9 @@ struct ProductDetailsView: View {
                                     .tag(size)
                             }
                         } label: {}
-                        
                     }
                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
-                    
+                    .padding(.vertical, 8)
                     
                     Text("Add To Cart")
                         .font(.customfont(.semibold, fontSize: 20))
@@ -85,7 +85,8 @@ struct ProductDetailsView_Previews: PreviewProvider {
                                         productImage: "SisiRelaxedShirt",
                                         productDescription: "GElevate your wardrobe with our chic women's shirt, designed to seamlessly blend style and comfort. Crafted from high-quality, breathable fabric, this shirt ensures all-day comfort while keeping you looking effortlessly sophisticated.",
                                         availableSizes: "UK-6|UK-12|UK-56",
-                                        ratings: "3")
+                                        ratings: "3",
+                                        catagoryName: "Jeans")
             
             ProductDetailsView(product: sampleProduct)
         }

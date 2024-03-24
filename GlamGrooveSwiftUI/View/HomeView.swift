@@ -42,7 +42,9 @@ struct HomeView: View {
                     LazyVGrid(columns: adaptiveColumns, spacing: 20) {
                         ForEach(filteredProducts, id: \.productId) { product in
                             NavigationLink(destination: ProductDetailsView (product: product)) {
-                                ProductCell(productImage: product.productImage, productName: product.productName, productPrice: product.productPrice)
+                                ProductCell(productImage: product.productImage, 
+                                            productName: product.productName,
+                                            productPrice: product.productPrice)
                             }
                         }
                     }
@@ -51,7 +53,6 @@ struct HomeView: View {
             }
             .navigationTitle("Products")
             .navigationBarTitleDisplayMode(.automatic)
-            //.navigationBarBackButtonHidden(true)
             .searchable(text: $searchTerm, prompt: "Search Products")
             .onAppear(perform: {
                 productsVM.fetchProducts()
