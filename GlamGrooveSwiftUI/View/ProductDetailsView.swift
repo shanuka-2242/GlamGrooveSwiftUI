@@ -12,6 +12,7 @@ struct ProductDetailsView: View {
     var product: Product
     
     @State var selectedSize: String = "UK-6"
+    @State var selectedQty: Int = 1
         
     var body: some View {
             ScrollView {
@@ -61,6 +62,10 @@ struct ProductDetailsView: View {
                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
                     .padding(.vertical, 8)
                     
+                    Stepper("Qty. (\(selectedQty))",  value: $selectedQty, in: 1...6)
+                        .padding(.bottom, 8)
+                        .font(.customfont(.medium, fontSize: 17))
+
                     Text("Add To Cart")
                         .font(.customfont(.semibold, fontSize: 20))
                         .foregroundColor(.white)
@@ -68,7 +73,6 @@ struct ProductDetailsView: View {
                         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 55, maxHeight:55 )
                         .background(Color.black)
                         .cornerRadius(10)
-                    
                 }
                 .padding()
             }
