@@ -22,6 +22,7 @@ struct ExploreView: View {
     @State var minimumPrice: String = ""
     @State var maximumPrice: String = ""
     @State var isPriceAnyRangeSelected: Bool = false
+    @State var isFilterButtonTapped: Bool = false
     
     var body: some View {
         
@@ -89,6 +90,8 @@ struct ExploreView: View {
                                 
                                 Button(action: {
                                     
+                                    isFilterButtonTapped.toggle()
+                                    
                                     //Price range selected
                                     if(isPriceAnyRangeSelected) {
 
@@ -109,8 +112,14 @@ struct ExploreView: View {
                                             if(minimumPrice.hasSuffix(".00") && maximumPrice.hasSuffix(".00")) {
                                                 if(Double(minimumPrice) ?? 0 < Double(maximumPrice) ?? 0) {
                                                     
-                                                    explorerVM.filteredProductList = explorerVM.getFilteredProducts(productCategory: selectedCategory, minPrice: minimumPrice, maxPrice: maximumPrice)
-                                                    
+                                                    if(explorerVM.getFilteredProducts(productCategory: selectedCategory, minPrice: minimumPrice, maxPrice: maximumPrice).count > 0) {
+                                                        
+                                                        explorerVM.filteredProductList = explorerVM.getFilteredProducts(productCategory: selectedCategory, minPrice: minimumPrice, maxPrice: maximumPrice)
+                                                    }
+                                                    else{
+                                                        errorMessage = "Filtered products are unavailable."
+                                                        isAlertShown.toggle()
+                                                    }
                                                 }
                                                 else {
                                                     errorMessage = "Minimum price cannot be smaller than maximum price"
@@ -138,7 +147,6 @@ struct ExploreView: View {
                                     Text("Filter Products")
                                         .foregroundColor(.black)
                                         .font(.customfont(.regular, fontSize: 16))
-                                    
                                 })
                                 .padding(.vertical, 15)
                                 .alert(isPresented: $isAlertShown) {
@@ -149,12 +157,53 @@ struct ExploreView: View {
                             .padding()
                         }
                         
-                        LazyVGrid(columns: adaptiveColumns, spacing: 20) {
-                            ForEach(explorerVM.filteredProductList, id: \.productId) { product in
-                                NavigationLink(destination: ProductDetailsView (product: product)) {
-                                    ProductCell(productImage: product.productImage,
-                                                productName: product.productName,
-                                                productPrice: product.productPrice)
+                        if(isFilterButtonTapped) {
+                            
+                            if(isPriceAnyRangeSelected){
+                                
+                                Text(selectedCategory + " Products In Any Price Range")
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .font(.customfont(.medium, fontSize: 17))
+                                
+                                LazyVGrid(columns: adaptiveColumns, spacing: 20) {
+                                    ForEach(explorerVM.filteredProductList, id: \.productId) { product in
+                                        NavigationLink(destination: ProductDetailsView (product: product)) {
+                                            ProductCell(productImage: product.productImage,
+                                                        productName: product.productName,
+                                                        productPrice: product.productPrice)
+                                        }
+                                    }
+                                }
+                            }
+                            else {
+                                
+                                Text("Filtered \(selectedCategory) Products In Rs. (\(minimumPrice) - \(maximumPrice))")
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .font(.customfont(.medium, fontSize: 17))
+                                
+                                LazyVGrid(columns: adaptiveColumns, spacing: 20) {
+                                    ForEach(explorerVM.filteredProductList, id: \.productId) { product in
+                                        NavigationLink(destination: ProductDetailsView (product: product)) {
+                                            ProductCell(productImage: product.productImage,
+                                                        productName: product.productName,
+                                                        productPrice: product.productPrice)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        else{
+                            Text("All Available Products")
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .font(.customfont(.medium, fontSize: 17))
+                            
+                            LazyVGrid(columns: adaptiveColumns, spacing: 20) {
+                                ForEach(explorerVM.products, id: \.productId) { product in
+                                    NavigationLink(destination: ProductDetailsView (product: product)) {
+                                        ProductCell(productImage: product.productImage,
+                                                    productName: product.productName,
+                                                    productPrice: product.productPrice)
+                                    }
                                 }
                             }
                         }
