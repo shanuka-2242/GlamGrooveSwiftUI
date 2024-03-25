@@ -9,36 +9,36 @@ import SwiftUI
 
 struct CartView: View {
     
-    @StateObject private var orderVM = OrderViewModel()
+    @StateObject private var cartItemVM = CartItemViewModel()
 
     var body: some View {
         
         NavigationView {
             ScrollView {
                 
-                if orderVM.isRefreshing {
+                if cartItemVM.isRefreshing {
                     ProgressView()
                 }
                 else {
                     VStack {
-                        ForEach(orderVM.orders, id: \.orderId) { order in
+                        ForEach(cartItemVM.cartItems, id: \.cartItemId) { cartItem in
                             //NavigationLink(destination: ProductDetailsView (product: product)) {
                             
-                            OrderCellView(orderImage: order.items.first?.itemImage ?? "notFound",
-                                          orderID: order.orderId,
-                                          orderTotalPrice: order.totalPrice, 
-                                          totalItemsQuantity: "4")
+//                            OrderCellView(orderImage: cartItem.cartItemImage,
+//                                          orderID: cartItem.cartItemId,
+//                                          orderTotalPrice: cartItem.itemsTotalPrice,
+//                                          totalItemsQuantity: "4")
                                 
                             //}
                         }
                     }
-                    .padding(.horizontal, 8)
+                    .padding(.horizontal, 12)
                 }
             }
             .navigationTitle("Your Cart")
             .navigationBarTitleDisplayMode(.automatic)
             .onAppear(perform: {
-                orderVM.fetchOrders()
+                cartItemVM.fetchCartItems()
             })
         }
     }

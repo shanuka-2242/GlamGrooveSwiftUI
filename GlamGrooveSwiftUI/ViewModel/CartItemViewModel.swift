@@ -7,19 +7,22 @@
 
 import Foundation
 
-final class OrderViewModel: ObservableObject {
+final class CartItemViewModel: ObservableObject {
     
-    @Published var orders: [Order] = []
+    @Published var cartItems: [CartItem] = []
     @Published var hasError = false
     @Published var error: ErrorCases?
     @Published private(set) var isRefreshing = false
     
-    func fetchOrders() {
+    //http://localhost:5000/insertCartItem
+    
+    
+    func fetchCartItems() {
         
         isRefreshing = true
         hasError = false
-        let ordersUrlString = "http://localhost:5000/getOrderInfo"
-        if let url = URL(string: ordersUrlString) {
+        let cartItemsUrlString = "http://localhost:5000/getCartItemInfo"
+        if let url = URL(string: cartItemsUrlString) {
             
             URLSession
                 .shared
@@ -39,8 +42,8 @@ final class OrderViewModel: ObservableObject {
                             decoder.keyDecodingStrategy = .convertFromSnakeCase
                             
                             if let data = data,
-                               let orders = try? decoder.decode([Order].self, from: data) {
-                                self?.orders = orders
+                               let cartItems = try? decoder.decode([CartItem].self, from: data) {
+                                self?.cartItems = cartItems
                                 
                             } else {
                                 
@@ -54,13 +57,13 @@ final class OrderViewModel: ObservableObject {
         }
     }
         
-    func generateOrderID() -> String {
+    func generateCartItemId() -> String {
         
         let currentDate = Date()
         let dateTimeFormat = DateFormatter()
         dateTimeFormat.dateFormat = "yyyyMMddHHmmss"
         
-        return "GG - \(dateTimeFormat.string(from: currentDate))"
+        return "GG-\(dateTimeFormat.string(from: currentDate))"
     }
     
     //Func to get order total price

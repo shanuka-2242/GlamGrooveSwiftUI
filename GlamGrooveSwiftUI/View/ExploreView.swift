@@ -231,7 +231,7 @@ struct ExploreView: View {
                         }
                     }
                     .padding(.horizontal, 12)
-                    .padding(.vertical, 20)
+                    .padding(.top, 20)
                 }
             }
             .onAppear(perform: {
