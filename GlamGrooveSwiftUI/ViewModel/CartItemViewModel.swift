@@ -14,9 +14,38 @@ final class CartItemViewModel: ObservableObject {
     @Published var error: ErrorCases?
     @Published private(set) var isRefreshing = false
     
-    //http://localhost:5000/insertCartItem
+    //Function to save cart item in DB
+    func insertCartItem(cartItem: CartItem) {
+        
+        guard let url = URL(string: "http://localhost:5000/insertCartItem") else {
+            print("Invalid URL")
+            return
+        }
+        
+        guard let jsonData = try? JSONEncoder().encode(cartItem) else {
+            print("Error encoding JSON")
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = jsonData
+        print("jsonData")
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            
+            if let responseJSON = try? JSONSerialization.jsonObject(with: data, options: []) {
+                print(responseJSON)
+            }
+        }.resume()
+    }
     
-    
+    //Function to get cart items
     func fetchCartItems() {
         
         isRefreshing = true
@@ -56,7 +85,7 @@ final class CartItemViewModel: ObservableObject {
                 }.resume()
         }
     }
-        
+    
     func generateCartItemId() -> String {
         
         let currentDate = Date()
@@ -66,8 +95,9 @@ final class CartItemViewModel: ObservableObject {
         return "GG-\(dateTimeFormat.string(from: currentDate))"
     }
     
-    //Func to get order total price
-//    func orderTotalPrice(productCategory: String, minPrice: String, maxPrice: String) -> [Product] {
-//
-//    }
+    //Func to get added cart items total price
+    func orderTotalPrice(productPrice: Double, productQty: Int) -> String {
+        
+        return String(format: "%.2f", Double(productQty) * Double(productPrice))
+    }
 }

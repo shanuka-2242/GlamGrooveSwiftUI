@@ -34,7 +34,7 @@ struct CartItemCellView: View {
                     Image(systemName: "trash")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 33, height: 33)
+                        .frame(width: 28, height: 28)
                         .foregroundColor(.red)
                 }
                 
@@ -58,7 +58,7 @@ struct CartItemCellView: View {
                     Image(systemName: "pencil.circle")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 33, height: 33)
+                        .frame(width: 28, height: 28)
                         .foregroundColor(.blue)
                 }
             }

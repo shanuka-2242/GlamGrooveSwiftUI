@@ -20,19 +20,18 @@ struct CartView: View {
                     ProgressView()
                 }
                 else {
-                    VStack {
+                    VStack(spacing: 16) {
                         ForEach(cartItemVM.cartItems, id: \.cartItemId) { cartItem in
-                            //NavigationLink(destination: ProductDetailsView (product: product)) {
-                            
-//                            OrderCellView(orderImage: cartItem.cartItemImage,
-//                                          orderID: cartItem.cartItemId,
-//                                          orderTotalPrice: cartItem.itemsTotalPrice,
-//                                          totalItemsQuantity: "4")
+                            CartItemCellView(cartItemImage: cartItem.cartItemImage,
+                                             cartItemName: cartItem.cartItemName,
+                                             cartItemTotalPrice: cartItem.cartItemPrice,
+                                             itemQuantity: cartItem.quantity,
+                                             itemSelectedSize: cartItem.cartItemSelectedSize)
                                 
-                            //}
                         }
                     }
                     .padding(.horizontal, 12)
+                    .padding(.top, 20)
                 }
             }
             .navigationTitle("Your Cart")
