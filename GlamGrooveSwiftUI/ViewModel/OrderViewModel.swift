@@ -53,4 +53,18 @@ final class OrderViewModel: ObservableObject {
                 }.resume()
         }
     }
+        
+    func generateOrderID() -> String {
+        
+        let currentDate = Date()
+        let dateTimeFormat = DateFormatter()
+        dateTimeFormat.dateFormat = "yyyyMMddHHmmss"
+        
+        return "GG - \(dateTimeFormat.string(from: currentDate))"
+    }
+    
+    //Func to get order total price
+//    func orderTotalPrice(productCategory: String, minPrice: String, maxPrice: String) -> [Product] {
+//
+//    }
 }

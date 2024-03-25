@@ -19,6 +19,7 @@ struct ExploreView: View {
     ]
     
     @State var selectedCategory: String = "All"
+    @State var selectedGender: String = "Both"
     @State var minimumPrice: String = ""
     @State var maximumPrice: String = ""
     @State var isPriceAnyRangeSelected: Bool = false
@@ -37,21 +38,42 @@ struct ExploreView: View {
                         ZStack {
                             RoundedRectangle(cornerRadius: 10)
                                 .stroke(Color.gray, lineWidth: 1)
-                            HStack {
-                                Text("Category")
-                                    .font(.customfont(.medium, fontSize: 18))
+                            
+                            VStack {
+                                HStack {
+                                    Text("Category")
+                                        .font(.customfont(.medium, fontSize: 18))
+                                    
+                                    Picker(selection: $selectedCategory) {
+                                        Text("All").tag("All")
+                                        Text("Jeans").tag("Jeans")
+                                        Text("Shirts").tag("Shirts")
+                                        Text("Shorts").tag("Shorts")
+                                        Text("T - Shirts").tag("T - Shirts")
+                                    } label: {}
+                                        .frame(maxWidth: .infinity, alignment: .trailing)
+                                        
+                                }
+                                .frame(maxWidth: .infinity, alignment: .leading)
                                 
-                                Picker(selection: $selectedCategory) {
-                                    Text("All").tag("All")
-                                    Text("Jeans").tag("Jeans")
-                                    Text("Shirts").tag("Shirts")
-                                    Text("Shorts").tag("Shorts")
-                                    Text("T - Shirts").tag("T - Shirts")
-                                } label: {}
+                                Divider()
+                                    .background(Color.gray)
+                                
+                                HStack {
+                                    Text("Gender")
+                                        .font(.customfont(.medium, fontSize: 18))
+                                                                        
+                                    Picker(selection: $selectedGender) {
+                                        Text("Both").tag("Both")
+                                        Text("Men").tag("Men")
+                                        Text("Women").tag("Women")
+                                    } label: {}
+                                        .frame(maxWidth: .infinity, alignment: .trailing)
+                                }
+                                .frame(maxWidth: .infinity, alignment: .leading)
                                 
                             }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding()
+                            .padding(13)
                         }
                         
                         ZStack {
@@ -94,10 +116,10 @@ struct ExploreView: View {
                                     
                                     //Price range selected
                                     if(isPriceAnyRangeSelected) {
-
-                                        if(explorerVM.getFilteredProducts(productCetagory: selectedCategory).count > 0) {
+                                        
+                                        if(explorerVM.getFilteredProducts(productCategory: selectedCategory, selectedGender: selectedGender).count > 0) {
                                             
-                                            explorerVM.filteredProductList = explorerVM.getFilteredProducts(productCetagory: selectedCategory)
+                                            explorerVM.filteredProductList = explorerVM.getFilteredProducts(productCategory: selectedCategory, selectedGender: selectedGender)
                                         }
                                         else{
                                             
@@ -112,9 +134,9 @@ struct ExploreView: View {
                                             if(minimumPrice.hasSuffix(".00") && maximumPrice.hasSuffix(".00")) {
                                                 if(Double(minimumPrice) ?? 0 < Double(maximumPrice) ?? 0) {
                                                     
-                                                    if(explorerVM.getFilteredProducts(productCategory: selectedCategory, minPrice: minimumPrice, maxPrice: maximumPrice).count > 0) {
+                                                    if(explorerVM.getFilteredProducts(productCategory: selectedCategory, selectedGender: selectedGender, minPrice: minimumPrice, maxPrice: maximumPrice).count > 0) {
                                                         
-                                                        explorerVM.filteredProductList = explorerVM.getFilteredProducts(productCategory: selectedCategory, minPrice: minimumPrice, maxPrice: maximumPrice)
+                                                        explorerVM.filteredProductList = explorerVM.getFilteredProducts(productCategory: selectedCategory, selectedGender: selectedGender, minPrice: minimumPrice, maxPrice: maximumPrice)
                                                     }
                                                     else{
                                                         errorMessage = "Filtered products are unavailable."
@@ -208,7 +230,7 @@ struct ExploreView: View {
                             }
                         }
                     }
-                    .padding(.horizontal, 8)
+                    .padding(.horizontal, 12)
                     .padding(.vertical, 20)
                 }
             }

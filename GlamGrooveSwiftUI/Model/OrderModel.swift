@@ -10,11 +10,7 @@ import Foundation
 struct Order: Codable {
     
     let orderId: String
-    let productId: String
-    let productName: String
-    let productPrice: String
-    let productImage: String
-    let quantity: String
-    let selectedSize: String
-    
+    let totalPrice: String
+    let items: [Item]
+
 }

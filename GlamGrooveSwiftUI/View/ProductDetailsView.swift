@@ -90,7 +90,8 @@ struct ProductDetailsView_Previews: PreviewProvider {
                                         productDescription: "GElevate your wardrobe with our chic women's shirt, designed to seamlessly blend style and comfort. Crafted from high-quality, breathable fabric, this shirt ensures all-day comfort while keeping you looking effortlessly sophisticated.",
                                         availableSizes: "UK-6|UK-12|UK-56",
                                         ratings: "3",
-                                        catagoryName: "Jeans")
+                                        catagoryName: "Jeans",
+                                        gender: "Women")
             
             ProductDetailsView(product: sampleProduct)
         }

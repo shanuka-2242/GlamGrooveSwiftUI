@@ -56,58 +56,77 @@ final class ExploreViewModel: ObservableObject {
     }
     
     // Price range not selected function
-    func getFilteredProducts(productCetagory: String) -> [Product]{
+    func getFilteredProducts(productCategory: String, selectedGender: String) -> [Product]{
         
         var returnedProductArray = [Product]()
         
-        if(productCetagory == "All"){
-            returnedProductArray = products
-        }
-        else {
-            if(products.count > 0) {
-                returnedProductArray = products.filter { $0.catagoryName == productCetagory }
+        if(products.count > 0) {
+            
+            if(productCategory == "All" && selectedGender == "Both"){
+                returnedProductArray = products
+                
+            }
+            else if(productCategory == "All" && selectedGender != "Both"){
+                returnedProductArray = products.filter {$0.gender == selectedGender}
+                
+            }
+            else if(selectedGender == "Both" && productCategory != "All") {
+                returnedProductArray = products.filter { $0.catagoryName == productCategory }
                 
             }
             else {
-                return returnedProductArray
+                returnedProductArray = products.filter { $0.catagoryName == productCategory && $0.gender == selectedGender}
+                
             }
         }
         return returnedProductArray
     }
     
     //Price range selected function
-    func getFilteredProducts(productCategory: String, minPrice: String, maxPrice: String) -> [Product] {
+    func getFilteredProducts(productCategory: String, selectedGender: String, minPrice: String, maxPrice: String) -> [Product] {
         
         var returnedProductArray = [Product]()
         let dMinPrice = Double(minPrice)
         let dMaxPrice = Double(maxPrice)
         
         if(products.count > 0) {
-            
-            if(productCategory == "All"){
-                
-                returnedProductArray = products.filter { product in
-                    guard let dProductPrice = Double(product.productPrice) else {
+
+            if(productCategory == "All" && selectedGender == "Both") {
+                returnedProductArray = products.filter {
+                    guard let dProductPrice = Double($0.productPrice) else {
                         return false
                     }
-                    return dProductPrice >= dMinPrice ?? 0 &&
-                    dProductPrice <= dMaxPrice ?? 0
+                    return dProductPrice >= dMinPrice ?? 0 && dProductPrice <= dMaxPrice ?? 0
+                }
+                
+            }
+            else if(productCategory == "All" && selectedGender != "Both") {
+                returnedProductArray = products.filter {
+                    guard let dProductPrice = Double($0.productPrice) else {
+                        return false
+                    }
+                    return dProductPrice >= dMinPrice ?? 0 && dProductPrice <= dMaxPrice ?? 0 && $0.gender == selectedGender
+                }
+                
+            }
+            else if(selectedGender == "Both" && productCategory != "All") {
+                returnedProductArray = products.filter {
+                    guard let dProductPrice = Double($0.productPrice) else {
+                        return false
+                    }
+                    return dProductPrice >= dMinPrice ?? 0 && dProductPrice <= dMaxPrice ?? 0 && $0.catagoryName == productCategory
                 }
             }
             else {
-                
-                returnedProductArray = products.filter { product in
-                    guard let dProductPrice = Double(product.productPrice) else {
+                returnedProductArray = products.filter {
+                    guard let dProductPrice = Double($0.productPrice) else {
                         return false
                     }
-                    return product.catagoryName == productCategory &&
-                    dProductPrice >= dMinPrice ?? 0 &&
-                    dProductPrice <= dMaxPrice ?? 0
+                    return dProductPrice >= dMinPrice ?? 0 && dProductPrice <= dMaxPrice ?? 0 && $0.catagoryName == productCategory && $0.catagoryName == productCategory
                 }
+                
             }
-        }
-        else {
-            return returnedProductArray
+            
         }
         return returnedProductArray
     }

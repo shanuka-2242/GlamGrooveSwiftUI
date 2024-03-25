@@ -9,14 +9,14 @@ import SwiftUI
 
 struct OrderCellView: View {
     
-    @State var productImage: String = "LSHestonOxfordTShirt"
-    @State var productName: String = "LS Heston Oxford Shirt"
-    @State var totalPrice: String = "6000.00"
-    @State var quantity: String = "2"
+    @State var orderImage: String = "LSHestonOxfordTShirt" //Order's first item's image
+    @State var orderID: String = "Order ID" //Random genarated number
+    @State var orderTotalPrice: String = "6000.00" //Order total price
+    @State var totalItemsQuantity: String = "2" //Total items in the order
 
     var body: some View {
-        HStack(spacing: 17) {
-            Image(productImage)
+        HStack(spacing: 15) {
+            Image(orderImage)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 130)
@@ -25,14 +25,15 @@ struct OrderCellView: View {
                 .padding(.bottom, 7)
             
             VStack(spacing: 8) {
-                Text(productName)
+                Text(orderID)
                     .font(.customfont(.semibold, fontSize: 19))
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                 
-                Text("\(quantity)  • Rs. \(totalPrice)")
+                Text("\(totalItemsQuantity)  • Rs. \(orderTotalPrice)")
                     .font(.customfont(.medium, fontSize: 16))
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     .padding(.bottom, 5)
+                    .foregroundColor(Color.gray)
                 
                 Text("View Order")
                     .font(.customfont(.semibold, fontSize: 20))

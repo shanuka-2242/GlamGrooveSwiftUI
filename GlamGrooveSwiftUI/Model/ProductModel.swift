@@ -17,5 +17,6 @@ struct Product: Codable {
     let availableSizes: String
     let ratings: String
     let catagoryName: String
-    
+    let gender: String
+
 }
