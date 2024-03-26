@@ -19,7 +19,7 @@ final class ExploreViewModel: ObservableObject {
         
         isRefreshing = true
         hasError = false
-        let productsUrlString = "http://localhost:5000/getProductInfo"
+        let productsUrlString = "http://localhost:5000/getProducts"
         if let url = URL(string: productsUrlString) {
             
             URLSession

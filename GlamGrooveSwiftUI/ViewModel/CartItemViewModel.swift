@@ -14,6 +14,43 @@ final class CartItemViewModel: ObservableObject {
     @Published var error: ErrorCases?
     @Published private(set) var isRefreshing = false
     
+    //Function to delete cart item in cart item id
+    func deleteCartItemById(cartItemId: String) {
+        
+        guard let url = URL(string: "http://localhost:5000/removeCartItem/\(cartItemId)") else {
+                    print("Invalid URL")
+                    return
+                }
+
+                var request = URLRequest(url: url)
+                request.httpMethod = "DELETE"
+
+                URLSession.shared.dataTask(with: request) { data, response, error in
+                    if let error = error {
+                        print("Error: \(error.localizedDescription)")
+                        return
+                    }
+
+                    guard let httpResponse = response as? HTTPURLResponse else {
+                        print("Invalid response")
+                        return
+                    }
+
+                    if (200...299).contains(httpResponse.statusCode) {
+                        print("Cart item deleted successfully")
+                        // Handle success response
+                    } else {
+                        if let data = data,
+                           let message = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                           let errorMessage = message["message"] as? String {
+                            print("Error: \(errorMessage)")
+                        } else {
+                            print("Error: Unable to delete cart item")
+                        }
+                    }
+                }.resume()
+    }
+    
     //Function to save cart item in DB
     func insertCartItem(cartItem: CartItem) {
         
@@ -50,7 +87,7 @@ final class CartItemViewModel: ObservableObject {
         
         isRefreshing = true
         hasError = false
-        let cartItemsUrlString = "http://localhost:5000/getCartItemInfo"
+        let cartItemsUrlString = "http://localhost:5000/getCartItems"
         if let url = URL(string: cartItemsUrlString) {
             
             URLSession

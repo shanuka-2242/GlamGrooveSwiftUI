@@ -9,6 +9,9 @@ import SwiftUI
 
 struct CartItemCellView: View {
     
+    @StateObject private var cartItemVM = CartItemViewModel()
+    
+    @State var cartItemId: String = "GG-20240326025141"
     @State var cartItemImage: String = "LSHestonOxfordTShirt"
     @State var cartItemName: String = "LS Heston Oxford Shirt"
     @State var cartItemTotalPrice: String = "7000.00"
@@ -34,8 +37,11 @@ struct CartItemCellView: View {
                     Image(systemName: "trash")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 28, height: 28)
-                        .foregroundColor(.red)
+                        .frame(width: 28, height: 28)                        .foregroundColor(.red)
+                        .onTapGesture {
+                                //TODO remove cart item code
+                            cartItemVM.deleteCartItemById(cartItemId: cartItemId)
+                        }
                 }
                 
                 Text(itemSelectedSize)

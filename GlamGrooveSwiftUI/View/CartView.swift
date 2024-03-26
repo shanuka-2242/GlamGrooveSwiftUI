@@ -22,7 +22,7 @@ struct CartView: View {
                 else {
                     VStack(spacing: 16) {
                         ForEach(cartItemVM.cartItems, id: \.cartItemId) { cartItem in
-                            CartItemCellView(cartItemImage: cartItem.cartItemImage,
+                            CartItemCellView(cartItemId: cartItem.cartItemId, cartItemImage: cartItem.cartItemImage,
                                              cartItemName: cartItem.cartItemName,
                                              cartItemTotalPrice: cartItem.cartItemPrice,
                                              itemQuantity: cartItem.quantity,
