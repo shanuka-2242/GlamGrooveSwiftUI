@@ -8,11 +8,76 @@
 import Foundation
 
 final class CartItemViewModel: ObservableObject {
-    
+   
+    @Published var products: [Product] = []
     @Published var cartItems: [CartItem] = []
+    @Published var updatedCartItem: CartItem?
     @Published var hasError = false
     @Published var error: ErrorCases?
     @Published private(set) var isRefreshing = false
+    
+    //Function to set product selected size to product details view screen
+    func getProductSelectedSize(existingProduct: Product, selectedSize: String) -> String {
+        
+        let availableSizesList = CommonFunctions.availableSizes(existingProduct.availableSizes, by: "|")
+        var reorderedList = [String]()
+        
+        if let index = availableSizesList.firstIndex(of: selectedSize) {
+            reorderedList.append(availableSizesList[index])
+            availableSizesList.forEach { item in
+                if item != selectedSize {
+                    reorderedList.append(item)
+                }
+            }
+        }
+        return reorderedList.joined(separator: "|")
+    }
+    
+    //Function to get a existing product by product ID
+    func getExistingProductById(productId: String) -> Product? {
+        
+        return products.first(where: { $0.productId == productId })
+    }
+
+    func fetchProducts() {
+        
+        isRefreshing = true
+        hasError = false
+        let productsUrlString = "http://localhost:5000/getProducts"
+        if let url = URL(string: productsUrlString) {
+            
+            URLSession
+                .shared
+                .dataTask(with: url) { [weak self] data, response, error in
+                    
+                    DispatchQueue.main.async {
+                        
+                        if let error = error {
+                            
+                            self?.hasError = true
+                            self?.error = ErrorCases.custom(error: error)
+                            
+                        }
+                        else {
+                            
+                            let decoder = JSONDecoder()
+                            decoder.keyDecodingStrategy = .convertFromSnakeCase
+                            
+                            if let data = data,
+                               let products = try? decoder.decode([Product].self, from: data) {
+                                self?.products = products
+                                
+                            } else {
+                                
+                                self?.hasError = true
+                                self?.error = ErrorCases.failedToDecode
+                            }
+                        }
+                        self?.isRefreshing = false
+                    }
+                }.resume()
+        }
+    }
     
     //Function to delete cart item in cart item id
     func deleteCartItemById(cartItemId: String) {
@@ -82,6 +147,45 @@ final class CartItemViewModel: ObservableObject {
         }.resume()
     }
     
+    //Function to update a cart item by Id
+    func updateCartItemById(cartItemId: String, updatedValues: CartItem) {
+        
+        guard let url = URL(string: "http://localhost:5000/updateCartItem/\(cartItemId)") else {
+                    print("Invalid URL")
+                    return
+                }
+
+                var request = URLRequest(url: url)
+                request.httpMethod = "PUT"
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+                do {
+                    request.httpBody = try JSONEncoder().encode(updatedValues)
+                } catch {
+                    print("Error encoding data: \(error.localizedDescription)")
+                    return
+                }
+
+                URLSession.shared.dataTask(with: request) { data, response, error in
+                    guard let data = data else {
+                        print("No data in response: \(error?.localizedDescription ?? "Unknown error")")
+                        return
+                    }
+
+                    if let decodedResponse = try? JSONDecoder().decode(CartItem.self, from: data) {
+                        DispatchQueue.main.async {
+                            self.updatedCartItem = decodedResponse
+                        }
+                    } else if let errorResponse = try? JSONDecoder().decode([String: String].self, from: data) {
+                        DispatchQueue.main.async {
+                            print(errorResponse["message"] ?? "Unknown error")
+                        }
+                    } else {
+                        print("Failed to decode response")
+                    }
+                }.resume()
+    }
+    
     //Function to get cart items
     func fetchCartItems() {
         
@@ -123,6 +227,7 @@ final class CartItemViewModel: ObservableObject {
         }
     }
     
+    //Function to generate card item ID
     func generateCartItemId() -> String {
         
         let currentDate = Date()
@@ -133,7 +238,7 @@ final class CartItemViewModel: ObservableObject {
     }
     
     //Func to get added cart items total price
-    func orderTotalPrice(productPrice: Double, productQty: Int) -> String {
+    func cartItemTotalPrice(productPrice: Double, productQty: Int) -> String {
         
         return String(format: "%.2f", Double(productQty) * Double(productPrice))
     }

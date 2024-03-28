@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CartView: View {
     
-    @StateObject private var cartItemVM = CartItemViewModel()
+    @ObservedObject private var cartItemVM = CartItemViewModel()
 
     var body: some View {
         
@@ -22,12 +22,15 @@ struct CartView: View {
                 else {
                     VStack(spacing: 16) {
                         ForEach(cartItemVM.cartItems, id: \.cartItemId) { cartItem in
-                            CartItemCellView(cartItemId: cartItem.cartItemId, cartItemImage: cartItem.cartItemImage,
+                            CartItemCellView(cartItemId: cartItem.cartItemId,
+                                             productId: cartItem.productId,
                                              cartItemName: cartItem.cartItemName,
-                                             cartItemTotalPrice: cartItem.cartItemPrice,
+                                             cartItemPrice: cartItem.cartItemPrice,
+                                             cartItemImage: cartItem.cartItemImage,
                                              itemQuantity: cartItem.quantity,
-                                             itemSelectedSize: cartItem.cartItemSelectedSize)
-                                
+                                             itemSelectedSize: cartItem.cartItemSelectedSize,
+                                             cartItemTotalPrice: cartItem.itemsTotalPrice)
+                        
                         }
                     }
                     .padding(.horizontal, 12)

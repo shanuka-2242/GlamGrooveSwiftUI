@@ -91,7 +91,7 @@ struct ProductDetailsView: View {
                                             cartItemImage: product.productImage,
                                             quantity: String(selectedQty),
                                             cartItemSelectedSize: selectedSize,
-                                            itemsTotalPrice: cartItemVM.orderTotalPrice(productPrice: Double(product.productPrice) ?? 0.00, productQty: selectedQty))
+                                            itemsTotalPrice: cartItemVM.cartItemTotalPrice(productPrice: Double(product.productPrice) ?? 0.00, productQty: selectedQty))
                     
                     cartItemVM.insertCartItem(cartItem: cartItem)
                 }), secondaryButton: .cancel())

@@ -33,11 +33,11 @@ struct HomeView: View {
                     ProgressView()
                 }
                 else {
-                    Image("sale_banner")
-                        .resizable()
-                        .scaledToFill()
-                        .padding(.bottom)
-                        .padding(.horizontal, 10)
+//                    Image("sale_banner")
+//                        .resizable()
+//                        .scaledToFill()
+//                        .padding(.bottom)
+//                        .padding(.horizontal, 10)
                     
                     LazyVGrid(columns: adaptiveColumns, spacing: 20) {
                         ForEach(filteredProducts, id: \.productId) { product in
